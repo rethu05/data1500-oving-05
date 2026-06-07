@@ -7,26 +7,36 @@
 4.  `SELECT Fornavn, Etternavn, Stilling AS Jobbtittel FROM Ansatt;`
 
 1.  **Forklaring:** ...
+/* SELECT FROM * VARE, betyr rett og slett at du sender en spørring til databasen om å hente ut denne dataen. den henter da alle dataene fra VARE.*/
 
 2.  **Forklaring:** ...
+/* SELECT VNr,, Betegnelse FROM VARE, betyr rett og slett en spesifikk spørring fra den tabellen. altså du sender en spørring til databasen om å hente spesefikke dataer fra den */
 
 3.  **Forklaring:** ...
+/* hent dataen ut fra DISTINCT KatNr fra VARE, tabellen.*/
 
 4.  **Forklaring:** ...
+hent dataene fornavn, etternavn, stilling AS Jobbtittel fra ansatt tabellen.*/
 
 ## Oppgave 2: WHERE-klausulen
 1.  `SELECT * FROM Vare WHERE Pris > 500;`
 2.  `SELECT * FROM Ansatt WHERE Stilling = 'Salgssjef' AND Årslønn > 600000;`
 3.  `SELECT Fornavn, Etternavn FROM Kunde WHERE PostNr = '0001' OR PostNr = '0002';`
-4.  `SELECT Betegnelse FROM Vare WHERE NOT KatNr = 1;
+4.  `SELECT Betegnelse FROM Vare WHERE NOT KatNr = 1;`
 
 1.  **Forklaring:** ...
+/* hent all dataen fra Vare hvor prisen er større enn 500*/
 
 2.  **Forklaring:** ...
+/*hent dataen fra ansatt hvor stillingen er salgsjeff og årslønn er større enn 600000.*/
 
 3.  **Forklaring:** ...
+/*hent fornavn, etternavn fra kunde hvor postnummer er == 0001 og eller post nr = 0002; */
+
 
 4.  **Forklaring:** ...
+/* returner betegenelse fra vare som ikke er katNr = 1; */
+
 
 ## Oppgave 3: Gruppering og Sortering
 1.  `SELECT * FROM Vare ORDER BY Pris DESC;`
