@@ -5,7 +5,7 @@ SELECT * FROM (
   ) AS siste20
   ORDER BY KNr ASC;
 
- SELECT fornavn, etternavn  FRONM Ansatt
+ SELECT Fornavn, Etternavn  FROM Ansatt
  LIMIT 10;
 
  SELECT DISTINCT Stilling FROM Ansatt;
@@ -14,27 +14,37 @@ SELECT * FROM (
 
  SELECT Navn AS Kategorinavn, KatNr AS KategoriID FROM Kategori;
 
- SELECT(SELECT COUNT(*) FROM Kunde) * SELECT(COUNT(*) FROM Ordre) AS AntallRader;
+ SELECT (SELECT COUNT(*) FROM Kunde) * (SELECT COUNT(*) FROM Ordre) AS AntallRader;
 
  SELECT * FROM Vare 
  WHERE Pris >= 200 AND Pris <= 500;
 
  SELECT * FROM Ansatt
- WHERE Stilling Lagermedarbeider AND Innkjøper;
+ WHERE Stilling IN ('Lagermedarbeider', 'Innkjøper');
 
  SELECT * FROM Kunde
- WHERE PostNr '3199' OR '1711' AND LIKE Fornavn 'A';
+ WHERE PostNr = '3199' OR PostNr = '1711' AND Fornavn LIKE 'A%';
 
  SELECT * FROM Vare
- WHERE KatNr<> 1 AND Antall 600;
+ WHERE KatNr<> 1 AND Antall <= 600;
 
  SELECT * FROM Ordre
  WHERE SendtDato IS NOT NULL AND BetaltDato IS NULL;
 
- SELECT * FROM Ansatte
+ SELECT * FROM Ansatt
  WHERE Etternavn ILIKE '%sen%';
 
  SELECT PostNr, COUNT(*) AS AntallKunder
  FROM Kunde
  GROUP BY PostNr;
+
+ SELECT KatNr, AVG(Pris) AS  GjennomsnittPris
+ FROM Vare
+ GROUP BY KatNr;
+
+ SELECT KatNr, MAX(Pris) AS DyresteVare
+ FROM Vare
+ GROUP BY KatNr;
+
  
+
